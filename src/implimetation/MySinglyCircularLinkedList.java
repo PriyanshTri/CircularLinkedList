@@ -37,14 +37,8 @@ public class MySinglyCircularLinkedList implements MySinglyCircularLinkedListADT
     public void addLast(int element) {
         Node node=new Node(element);
         if(!isEmpty()){
-            if(tail.getNext()==tail){
-                node.setNext(tail);
-                tail.setNext(node);
-            }
-            else{
-                node.setNext(tail.getNext());
-                tail.setNext(node);
-            }
+            node.setNext(tail.getNext());
+            tail.setNext(node);
             tail=node;
         }
         else{
